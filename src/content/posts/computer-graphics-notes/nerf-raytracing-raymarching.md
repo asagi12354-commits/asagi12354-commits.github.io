@@ -1,6 +1,6 @@
 ---
 title: "NeRF与光线追踪、光线步进的关系及论文核心原理与公式推导"
-published: 2026-08-21
+published: 2026-08-21 14:00:00
 description: "本文严格基于NeRF原版论文《NeRF:RepresentingScenesasNeuralRadianceFields"
 image: 'api'
 tags: [图形学, NeRF, 光线追踪]
