@@ -24,6 +24,7 @@
 ### 🚀 项目展示
 
 ::github{repo="asagi12354-commits/The_Replica_project_NeRF_by_ASAGI"}
+::github{repo="asagi12354-commits/FortuneRendererTemplate"}
 
 ### 📬 联系我
 - GitHub 主页：[asagi12354-commits](https://github.com/asagi12354-commits)
