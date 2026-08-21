@@ -63,12 +63,12 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			titleSize: "4.5rem",
 			// 主页横幅副标题
 			subtitle: [
-			    "Words I've collected along the way",
-			    "Moments worth remembering",
- 			    "Thoughts that lingered a little longer",
-    			"Pages from an ordinary life",
-    			"Small stories, quietly told",
-    			"Notes to my future self",
+				"Words I've collected along the way",
+				"Moments worth remembering",
+				"Thoughts that lingered a little longer",
+				"Pages from an ordinary life",
+				"Small stories, quietly told",
+				"Notes to my future self",
 			],
 			// 主页横幅副标题字体大小
 			subtitleSize: "1.5rem",
