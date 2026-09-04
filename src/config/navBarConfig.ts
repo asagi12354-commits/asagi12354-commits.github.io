@@ -53,6 +53,9 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 		url: "#",
 		icon: "material-symbols:person",
 		children: [
+			// 算法刷题统计
+			LinkPresets.OJ,
+
 			// 动态
 			LinkPresets.Dynamic,
 
@@ -158,6 +161,12 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		url: "/guestbook/",
 		icon: "material-symbols:chat",
 		pageKey: "guestbook",
+	},
+	OJ: {
+		name: "算法刷题",
+		url: "/oj/",
+		icon: "material-symbols:code-blocks-outline",
+		pageKey: "oj",
 	},
 	Dynamic: {
 		name: "动态",
