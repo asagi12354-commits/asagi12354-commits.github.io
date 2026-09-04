@@ -407,6 +407,26 @@ enum I18nKey {
 	siteStatsDays = "siteStatsDays",
 	today = "today",
 
+	// 算法刷题统计（OJ）
+	ojStats = "ojStats",
+	ojTotalSolved = "ojTotalSolved",
+	ojLeetcode = "ojLeetcode",
+	ojLuogu = "ojLuogu",
+	ojEasy = "ojEasy",
+	ojMedium = "ojMedium",
+	ojHard = "ojHard",
+	ojSolved = "ojSolved",
+	ojSubmitted = "ojSubmitted",
+	ojRanking = "ojRanking",
+	ojPageTitle = "ojPageTitle",
+	ojPageDescription = "ojPageDescription",
+	ojDifficultyDistribution = "ojDifficultyDistribution",
+	ojPlatformComparison = "ojPlatformComparison",
+	ojGrowthTrend = "ojGrowthTrend",
+	ojHeatmap = "ojHeatmap",
+	ojNoData = "ojNoData",
+	ojLastUpdated = "ojLastUpdated",
+
 	// 站点信息
 	siteInfo = "siteInfo",
 	siteInfoBuildTime = "siteInfoBuildTime",

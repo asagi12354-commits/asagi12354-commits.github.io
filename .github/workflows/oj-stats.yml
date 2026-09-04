@@ -1,0 +1,56 @@
+name: Update OJ Stats
+
+# 定时抓取 LeetCode / 洛谷刷题数据并累积每日快照。
+# 提交 src/constants/oj-stats.json 的变更会推送到 master，
+# 从而触发 deploy.yml 重新构建部署（数据随之刷新）。
+
+on:
+  schedule:
+    # 每天 UTC 22:17（北京时间次日 06:17）运行一次，避开整点高峰
+    - cron: "17 22 * * *"
+  workflow_dispatch:
+
+# 需要写权限以提交更新后的 JSON
+permissions:
+  contents: write
+
+# 避免与自身并发
+concurrency:
+  group: "oj-stats"
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.22.0
+          run_install: false
+
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Fetch OJ stats
+        run: pnpm run oj-stats
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [[ -n "$(git status --porcelain src/constants/oj-stats.json)" ]]; then
+            git add src/constants/oj-stats.json
+            git commit -m "chore: update OJ stats"
+            git push
+          else
+            echo "No changes in oj-stats.json, skip commit."
+          fi

@@ -423,6 +423,26 @@ export const en: Translation = {
 	[Key.siteStatsDays]: "{days} days",
 	[Key.today]: "Today",
 
+	[Key.ojStats]: "Coding Stats",
+	[Key.ojTotalSolved]: "Total Solved",
+	[Key.ojLeetcode]: "LeetCode",
+	[Key.ojLuogu]: "Luogu",
+	[Key.ojEasy]: "Easy",
+	[Key.ojMedium]: "Medium",
+	[Key.ojHard]: "Hard",
+	[Key.ojSolved]: "Solved",
+	[Key.ojSubmitted]: "Submitted",
+	[Key.ojRanking]: "Ranking",
+	[Key.ojPageTitle]: "Algorithm Practice",
+	[Key.ojPageDescription]:
+		"Tracking and analyzing my algorithm practice across OJ platforms",
+	[Key.ojDifficultyDistribution]: "Difficulty Distribution",
+	[Key.ojPlatformComparison]: "Platform Comparison",
+	[Key.ojGrowthTrend]: "Growth Trend",
+	[Key.ojHeatmap]: "Activity Heatmap",
+	[Key.ojNoData]: "No data available",
+	[Key.ojLastUpdated]: "Updated at",
+
 	// Site Info
 	[Key.siteInfo]: "Site Info",
 	[Key.siteInfoBuildTime]: "Build Time",

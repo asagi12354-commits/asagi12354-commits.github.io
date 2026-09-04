@@ -421,6 +421,26 @@ export const ja: Translation = {
 	[Key.siteStatsDays]: "{days} 日",
 	[Key.today]: "今日",
 
+	[Key.ojStats]: "問題演習統計",
+	[Key.ojTotalSolved]: "総問題数",
+	[Key.ojLeetcode]: "LeetCode",
+	[Key.ojLuogu]: "洛谷",
+	[Key.ojEasy]: "易しい",
+	[Key.ojMedium]: "普通",
+	[Key.ojHard]: "難しい",
+	[Key.ojSolved]: "正解済み",
+	[Key.ojSubmitted]: "提出済み",
+	[Key.ojRanking]: "ランキング",
+	[Key.ojPageTitle]: "アルゴリズム演習",
+	[Key.ojPageDescription]:
+		"各 OJ プラットフォームでのアルゴリズム演習状況を記録・分析します",
+	[Key.ojDifficultyDistribution]: "難易度分布",
+	[Key.ojPlatformComparison]: "プラットフォーム比較",
+	[Key.ojGrowthTrend]: "演習の推移",
+	[Key.ojHeatmap]: "演習ヒートマップ",
+	[Key.ojNoData]: "データがありません",
+	[Key.ojLastUpdated]: "データ更新日時",
+
 	// サイト情報
 	[Key.siteInfo]: "サイト情報",
 	[Key.siteInfoBuildTime]: "ビルド日時",

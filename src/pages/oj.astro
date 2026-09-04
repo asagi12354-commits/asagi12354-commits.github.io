@@ -1,0 +1,64 @@
+---
+import OjDashboard from "@/components/pages/oj/OjDashboard.svelte";
+import { ojConfig, siteConfig } from "@/config";
+import I18nKey from "@/i18n/i18nKey";
+import { i18n } from "@/i18n/translation";
+import MainGridLayout from "@/layouts/MainGridLayout.astro";
+import {
+	getLeetcodeStats,
+	getLuoguDailyCounts,
+	getLuoguStats,
+	getOjData,
+	getOjHistory,
+	getOjSummary,
+} from "@/utils/oj-utils";
+
+// 检查页面是否启用
+if (!siteConfig.pages.oj || !ojConfig.enable) {
+	return Astro.redirect("/404/");
+}
+
+const title = ojConfig.title || i18n(I18nKey.ojPageTitle);
+const description = ojConfig.description || i18n(I18nKey.ojPageDescription);
+
+// 构建时聚合好数据，作为 props 传给 Svelte 岛
+const dashboardData = {
+	summary: getOjSummary(),
+	leetcode: getLeetcodeStats(),
+	luogu: getLuoguStats(),
+	history: getOjHistory(),
+	dailyCounts: getLuoguDailyCounts(),
+	updatedAt: getOjData().updatedAt,
+};
+
+// i18n 文案传给岛（Svelte 组件无法直接调用 astro 的 i18n）
+const labels = {
+	totalSolved: i18n(I18nKey.ojTotalSolved),
+	leetcode: i18n(I18nKey.ojLeetcode),
+	luogu: i18n(I18nKey.ojLuogu),
+	easy: i18n(I18nKey.ojEasy),
+	medium: i18n(I18nKey.ojMedium),
+	hard: i18n(I18nKey.ojHard),
+	solved: i18n(I18nKey.ojSolved),
+	submitted: i18n(I18nKey.ojSubmitted),
+	ranking: i18n(I18nKey.ojRanking),
+	difficultyDistribution: i18n(I18nKey.ojDifficultyDistribution),
+	platformComparison: i18n(I18nKey.ojPlatformComparison),
+	growthTrend: i18n(I18nKey.ojGrowthTrend),
+	heatmap: i18n(I18nKey.ojHeatmap),
+	noData: i18n(I18nKey.ojNoData),
+	lastUpdated: i18n(I18nKey.ojLastUpdated),
+};
+---
+
+<MainGridLayout title={title} description={description}>
+  <div class="flex w-full rounded-(--radius-large) overflow-hidden relative min-h-32">
+    <div class="card-base z-10 px-9 py-6 relative w-full">
+      <h1 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-1">
+        {title}
+      </h1>
+      <p class="text-neutral-500 dark:text-neutral-400 mb-6">{description}</p>
+      <OjDashboard client:load data={dashboardData} labels={labels} />
+    </div>
+  </div>
+</MainGridLayout>

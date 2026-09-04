@@ -89,6 +89,7 @@ export type SiteConfig = {
 		gallery: boolean; // 相册页面开关
 		bilibili: boolean; // 哔哩哔哩追番页面开关
 		dynamic: boolean; // 动态页面开关
+		oj: boolean; // 算法刷题统计页面开关
 	};
 
 	// 分类导航栏开关

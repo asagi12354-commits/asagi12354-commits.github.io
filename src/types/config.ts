@@ -31,6 +31,12 @@ export type {
 	NavBarSearchConfig,
 	NavBarSearchMethod,
 } from "./navBarConfig";
+export type {
+	OjConfig,
+	OjLeetcodeConfig,
+	OjLuoguConfig,
+	OjPlatformsConfig,
+} from "./ojConfig";
 export type { Live2DWidgetConfig, SpineModelConfig } from "./pioConfig";
 export type { PlantUMLConfig } from "./plantumlConfig";
 export type { ProfileConfig } from "./profileConfig";

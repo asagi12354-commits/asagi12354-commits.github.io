@@ -10,7 +10,8 @@ export type WidgetComponentType =
 	| "calendar"
 	| "music"
 	| "siteInfo"
-	| "dynamic";
+	| "dynamic"
+	| "ojStats";
 
 export type WidgetComponentConfig = {
 	type: WidgetComponentType; // 组件类型
@@ -41,6 +42,14 @@ export type WidgetSpecificConfig = {
 	ad?: AdConfig; // 广告组件专用配置
 	siteInfo?: SiteInfoConfig; // 站点信息组件专用配置
 	dynamic?: DynamicWidgetConfig; // 最新动态组件专用配置
+	ojStats?: OjStatsWidgetConfig; // 刷题统计组件专用配置
+};
+
+// 刷题统计组件专用配置
+export type OjStatsWidgetConfig = {
+	showPlatforms?: ("leetcode" | "luogu")[]; // 显示哪些平台，默认全部
+	showDifficulty?: boolean; // 是否显示 LeetCode 难度分布，默认 true
+	moreUrl?: string; // "更多"链接地址，默认 /oj/
 };
 
 export type DynamicWidgetConfig = {

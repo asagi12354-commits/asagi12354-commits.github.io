@@ -32,6 +32,9 @@ const pages = resolvePageToggles({
 	// MyAnimeList页面开关
 	mal: false,
 
+	// 算法刷题统计页面开关
+	oj: true,
+
 	// ── 关于 (About) ──────────────────────────────────
 
 	// 打赏页面开关

@@ -1,0 +1,131 @@
+---
+import { Icon } from "astro-icon/components";
+import WidgetLayout from "@/components/common/WidgetLayout.astro";
+import I18nKey from "@/i18n/i18nKey";
+import { i18n } from "@/i18n/translation";
+import type { WidgetComponentConfig } from "@/types/config";
+import {
+	getLeetcodeStats,
+	getLuoguStats,
+	getOjSummary,
+} from "@/utils/oj-utils";
+
+interface Props {
+	class?: string;
+	style?: string;
+	widgetConfig?: WidgetComponentConfig;
+}
+
+const { class: className, style, widgetConfig } = Astro.props;
+
+const showTitle = widgetConfig?.showTitle !== false;
+const ojWidgetConfig = widgetConfig?.specificConfig?.ojStats;
+const showPlatforms = ojWidgetConfig?.showPlatforms ?? ["leetcode", "luogu"];
+const showDifficulty = ojWidgetConfig?.showDifficulty !== false;
+const moreUrl = ojWidgetConfig?.moreUrl ?? "/oj/";
+
+const summary = getOjSummary();
+const leetcode = getLeetcodeStats();
+const luogu = getLuoguStats();
+
+// 平台明细行
+type PlatformRow = {
+	key: "leetcode" | "luogu";
+	icon: string;
+	label: string;
+	solved: number;
+	url: string;
+	color: string;
+};
+
+const platformRows: PlatformRow[] = [];
+if (showPlatforms.includes("leetcode") && leetcode?.enable) {
+	platformRows.push({
+		key: "leetcode",
+		icon: "simple-icons:leetcode",
+		label: i18n(I18nKey.ojLeetcode),
+		solved: leetcode.totalSolved,
+		url: leetcode.url,
+		color: "#FFA116",
+	});
+}
+if (showPlatforms.includes("luogu") && luogu?.enable) {
+	platformRows.push({
+		key: "luogu",
+		icon: "simple-icons:luogu",
+		label: i18n(I18nKey.ojLuogu),
+		solved: luogu.passedProblemCount,
+		url: luogu.url,
+		color: "#0E90D2",
+	});
+}
+
+// LeetCode 难度分布
+const diff = leetcode?.difficulty ?? { easy: 0, medium: 0, hard: 0 };
+const difficultyBars = [
+	{ label: i18n(I18nKey.ojEasy), value: diff.easy, color: "#00b8a3" },
+	{ label: i18n(I18nKey.ojMedium), value: diff.medium, color: "#ffb800" },
+	{ label: i18n(I18nKey.ojHard), value: diff.hard, color: "#ff375f" },
+];
+const diffMax = Math.max(diff.easy, diff.medium, diff.hard, 1);
+const hasData = platformRows.length > 0;
+---
+
+<WidgetLayout name={i18n(I18nKey.ojStats)} showTitle={showTitle} id="oj-stats" moreUrl={moreUrl} class={className} style={style}>
+  {hasData ? (
+    <div class="flex flex-col gap-3">
+      {/* 总题数 */}
+      <div class="flex items-center justify-between px-3 py-1.5">
+        <div class="flex items-center gap-2.5">
+          <div class="text-(--primary) text-xl">
+            <Icon is:inline name="material-symbols:code-blocks-outline" />
+          </div>
+          <span class="text-neutral-700 dark:text-neutral-300 font-medium text-sm">
+            {i18n(I18nKey.ojTotalSolved)}
+          </span>
+        </div>
+        <span class="text-base font-bold text-neutral-900 dark:text-neutral-100">
+          {summary.total}
+        </span>
+      </div>
+
+      {/* 各平台明细 */}
+      {platformRows.map((row) => (
+        <a href={row.url} target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-between px-3 py-1.5 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition">
+          <div class="flex items-center gap-2.5">
+            <div class="text-xl" style={`color:${row.color}`}>
+              <Icon is:inline name={row.icon} />
+            </div>
+            <span class="text-neutral-700 dark:text-neutral-300 font-medium text-sm">
+              {row.label}
+            </span>
+          </div>
+          <div class="flex items-center gap-1">
+            <span class="text-base font-bold text-neutral-900 dark:text-neutral-100">{row.solved}</span>
+            <span class="text-xs text-neutral-500 dark:text-neutral-400">{i18n(I18nKey.ojSolved)}</span>
+          </div>
+        </a>
+      ))}
+
+      {/* LeetCode 难度分布 */}
+      {showDifficulty && leetcode?.enable && (
+        <div class="px-3 pt-1 flex flex-col gap-1.5">
+          {difficultyBars.map((bar) => (
+            <div class="flex items-center gap-2">
+              <span class="text-xs w-8 shrink-0" style={`color:${bar.color}`}>{bar.label}</span>
+              <div class="flex-1 h-1.5 rounded-full bg-black/5 dark:bg-white/10 overflow-hidden">
+                <div class="h-full rounded-full" style={`width:${(bar.value / diffMax) * 100}%;background:${bar.color}`}></div>
+              </div>
+              <span class="text-xs font-medium text-neutral-600 dark:text-neutral-400 w-6 text-right">{bar.value}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  ) : (
+    <div class="px-3 py-4 text-sm text-neutral-500 dark:text-neutral-400 text-center">
+      {i18n(I18nKey.ojNoData)}
+    </div>
+  )}
+</WidgetLayout>

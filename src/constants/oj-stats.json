@@ -1,0 +1,48 @@
+{
+  "updatedAt": "2026-09-04T03:42:22.403Z",
+  "platforms": {
+    "leetcode": {
+      "enable": true,
+      "username": "ASA_GI",
+      "site": "cn",
+      "url": "https://leetcode.cn/u/ASA_GI/",
+      "totalSolved": 7,
+      "difficulty": {
+        "easy": 6,
+        "medium": 1,
+        "hard": 0
+      },
+      "ranking": null,
+      "fetchedAt": "2026-09-04T03:42:22.403Z"
+    },
+    "luogu": {
+      "enable": true,
+      "uid": "2063081",
+      "url": "https://www.luogu.com.cn/user/2063081",
+      "name": "ASAGI",
+      "passedProblemCount": 18,
+      "submittedProblemCount": 20,
+      "ranking": 455145,
+      "ccfLevel": 0,
+      "color": "Gray",
+      "dailyCounts": {
+        "2026-03-26": 2,
+        "2026-03-29": 2,
+        "2026-03-30": 2,
+        "2026-03-31": 1,
+        "2026-04-01": 3,
+        "2026-04-02": 4,
+        "2026-04-03": 5
+      },
+      "fetchedAt": "2026-09-04T03:42:22.279Z"
+    }
+  },
+  "history": [
+    {
+      "date": "2026-09-04",
+      "leetcodeSolved": 7,
+      "luoguSolved": 18,
+      "total": 25
+    }
+  ]
+}

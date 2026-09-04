@@ -420,6 +420,26 @@ export const ko: Translation = {
 	[Key.siteStatsDays]: "{days}일",
 	[Key.today]: "오늘",
 
+	[Key.ojStats]: "문제 풀이 통계",
+	[Key.ojTotalSolved]: "총 문제 수",
+	[Key.ojLeetcode]: "LeetCode",
+	[Key.ojLuogu]: "Luogu",
+	[Key.ojEasy]: "쉬움",
+	[Key.ojMedium]: "보통",
+	[Key.ojHard]: "어려움",
+	[Key.ojSolved]: "해결",
+	[Key.ojSubmitted]: "제출",
+	[Key.ojRanking]: "순위",
+	[Key.ojPageTitle]: "알고리즘 문제 풀이",
+	[Key.ojPageDescription]:
+		"여러 OJ 플랫폼에서의 알고리즘 문제 풀이 현황을 기록하고 분석합니다",
+	[Key.ojDifficultyDistribution]: "난이도 분포",
+	[Key.ojPlatformComparison]: "플랫폼 비교",
+	[Key.ojGrowthTrend]: "풀이 증가 추세",
+	[Key.ojHeatmap]: "활동 히트맵",
+	[Key.ojNoData]: "데이터 없음",
+	[Key.ojLastUpdated]: "업데이트 시간",
+
 	// Site Info
 	[Key.siteInfo]: "사이트 정보",
 	[Key.siteInfoBuildTime]: "빌드 시각",

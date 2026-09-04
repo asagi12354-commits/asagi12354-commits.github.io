@@ -424,6 +424,26 @@ export const ru: Translation = {
 	[Key.siteStatsDays]: "{days} дней",
 	[Key.today]: "Сегодня",
 
+	[Key.ojStats]: "Статистика задач",
+	[Key.ojTotalSolved]: "Всего решено",
+	[Key.ojLeetcode]: "LeetCode",
+	[Key.ojLuogu]: "Luogu",
+	[Key.ojEasy]: "Лёгкие",
+	[Key.ojMedium]: "Средние",
+	[Key.ojHard]: "Сложные",
+	[Key.ojSolved]: "Решено",
+	[Key.ojSubmitted]: "Отправлено",
+	[Key.ojRanking]: "Рейтинг",
+	[Key.ojPageTitle]: "Решение задач",
+	[Key.ojPageDescription]:
+		"Отслеживание и анализ решения алгоритмических задач на разных платформах OJ",
+	[Key.ojDifficultyDistribution]: "Распределение по сложности",
+	[Key.ojPlatformComparison]: "Сравнение платформ",
+	[Key.ojGrowthTrend]: "Динамика решений",
+	[Key.ojHeatmap]: "Тепловая карта активности",
+	[Key.ojNoData]: "Нет данных",
+	[Key.ojLastUpdated]: "Обновлено",
+
 	// Информация о сайте
 	[Key.siteInfo]: "Информация о сайте",
 	[Key.siteInfoBuildTime]: "Время сборки",
