@@ -49,6 +49,27 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			showOnPostPage: true,
 		},
 		{
+			// 组件类型：算法刷题统计组件
+			type: "ojStats",
+			// 是否启用该组件
+			enable: true,
+			// 组件位置
+			position: "top",
+			// 是否在文章详情页显示
+			showOnPostPage: false,
+			// 组件专属配置
+			specificConfig: {
+				ojStats: {
+					// 显示哪些平台，默认全部
+					showPlatforms: ["leetcode", "luogu"],
+					// 是否显示 LeetCode 难度分布
+					showDifficulty: true,
+					// "更多"跳转到分析页
+					moreUrl: "/oj/",
+				},
+			},
+		},
+		{
 			// 组件类型：公告组件
 			type: "announcement",
 			// 是否启用该组件
@@ -143,27 +164,6 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 				siteInfo: {
 					// 未能识别的构建平台回退显示文本，可自定义
 					unknownBuildPlatform: "Unknown CI",
-				},
-			},
-		},
-		{
-			// 组件类型：算法刷题统计组件
-			type: "ojStats",
-			// 是否启用该组件
-			enable: true,
-			// 组件位置
-			position: "top",
-			// 是否在文章详情页显示
-			showOnPostPage: false,
-			// 组件专属配置
-			specificConfig: {
-				ojStats: {
-					// 显示哪些平台，默认全部
-					showPlatforms: ["leetcode", "luogu"],
-					// 是否显示 LeetCode 难度分布
-					showDifficulty: true,
-					// "更多"跳转到分析页
-					moreUrl: "/oj/",
 				},
 			},
 		},
