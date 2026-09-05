@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-05T00:02:41.484Z",
+  "updatedAt": "2026-09-05T23:53:11.159Z",
   "platforms": {
     "leetcode": {
       "enable": true,
@@ -13,7 +13,7 @@
         "hard": 0
       },
       "ranking": null,
-      "fetchedAt": "2026-09-05T00:02:41.476Z"
+      "fetchedAt": "2026-09-05T23:53:11.151Z"
     },
     "luogu": {
       "enable": true,
@@ -34,7 +34,7 @@
         "2026-04-02": 4,
         "2026-04-03": 5
       },
-      "fetchedAt": "2026-09-05T00:02:40.561Z"
+      "fetchedAt": "2026-09-05T23:53:09.975Z"
     }
   },
   "history": [
