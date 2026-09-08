@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-06T23:52:05.601Z",
+  "updatedAt": "2026-09-08T00:24:04.889Z",
   "platforms": {
     "leetcode": {
       "enable": true,
@@ -13,7 +13,7 @@
         "hard": 0
       },
       "ranking": null,
-      "fetchedAt": "2026-09-06T23:52:05.149Z"
+      "fetchedAt": "2026-09-08T00:24:04.675Z"
     },
     "luogu": {
       "enable": true,
@@ -22,7 +22,7 @@
       "name": "ASAGI",
       "passedProblemCount": 18,
       "submittedProblemCount": 20,
-      "ranking": 455879,
+      "ranking": 468500,
       "ccfLevel": 0,
       "color": "Gray",
       "dailyCounts": {
@@ -34,7 +34,7 @@
         "2026-04-02": 4,
         "2026-04-03": 5
       },
-      "fetchedAt": "2026-09-06T23:52:05.594Z"
+      "fetchedAt": "2026-09-08T00:24:04.883Z"
     }
   },
   "history": [
@@ -52,6 +52,12 @@
     },
     {
       "date": "2026-09-06",
+      "leetcodeSolved": 7,
+      "luoguSolved": 18,
+      "total": 25
+    },
+    {
+      "date": "2026-09-08",
       "leetcodeSolved": 7,
       "luoguSolved": 18,
       "total": 25
