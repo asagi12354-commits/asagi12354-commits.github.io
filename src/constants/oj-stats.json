@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T00:24:04.889Z",
+  "updatedAt": "2026-09-09T00:12:15.589Z",
   "platforms": {
     "leetcode": {
       "enable": true,
@@ -13,7 +13,7 @@
         "hard": 0
       },
       "ranking": null,
-      "fetchedAt": "2026-09-08T00:24:04.675Z"
+      "fetchedAt": "2026-09-09T00:12:15.277Z"
     },
     "luogu": {
       "enable": true,
@@ -34,7 +34,7 @@
         "2026-04-02": 4,
         "2026-04-03": 5
       },
-      "fetchedAt": "2026-09-08T00:24:04.883Z"
+      "fetchedAt": "2026-09-09T00:12:15.583Z"
     }
   },
   "history": [
@@ -58,6 +58,12 @@
     },
     {
       "date": "2026-09-08",
+      "leetcodeSolved": 7,
+      "luoguSolved": 18,
+      "total": 25
+    },
+    {
+      "date": "2026-09-09",
       "leetcodeSolved": 7,
       "luoguSolved": 18,
       "total": 25
