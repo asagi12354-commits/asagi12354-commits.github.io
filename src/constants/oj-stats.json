@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T01:07:47.493Z",
+  "updatedAt": "2026-11-02T01:29:44.008Z",
   "platforms": {
     "leetcode": {
       "enable": true,
@@ -13,7 +13,7 @@
         "hard": 0
       },
       "ranking": null,
-      "fetchedAt": "2026-11-01T01:07:47.488Z"
+      "fetchedAt": "2026-11-02T01:29:44.001Z"
     },
     "luogu": {
       "enable": true,
@@ -376,6 +376,12 @@
     },
     {
       "date": "2026-11-01",
+      "leetcodeSolved": 7,
+      "luoguSolved": 18,
+      "total": 25
+    },
+    {
+      "date": "2026-11-02",
       "leetcodeSolved": 7,
       "luoguSolved": 18,
       "total": 25
